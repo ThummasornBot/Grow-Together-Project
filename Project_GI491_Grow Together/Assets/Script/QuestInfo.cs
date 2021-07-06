@@ -7,6 +7,7 @@ using System;
 public class QuestInfo : MonoBehaviour
 {
     public GameObject _QuestWindow;
+
     // Start is called before the first frame update
     void Start()
     {

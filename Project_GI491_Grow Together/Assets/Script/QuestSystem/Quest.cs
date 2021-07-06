@@ -5,8 +5,9 @@ using UnityEngine;
 
 [System.Serializable]
 public class Quest
-    
 {
+    public bool CheckButton = false;
+
     public bool isActive;
 
     public string title;
@@ -14,9 +15,8 @@ public class Quest
     public int money = 15;
 
     public GoalQuest goal;
-    
-    
 
+    
 
     public void Complete()
     {
