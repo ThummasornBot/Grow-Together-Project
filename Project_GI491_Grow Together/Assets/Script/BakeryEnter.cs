@@ -38,6 +38,13 @@ public class BakeryEnter : MonoBehaviour
             CheckTrigger = true;
         }
     }
+    public void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            CheckTrigger = false;
+        }
+    }
 
     public void ExitBakery()
     {

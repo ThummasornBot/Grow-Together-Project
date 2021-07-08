@@ -14,7 +14,7 @@ public class ListQuest : MonoBehaviour
 
     
     
-    public void Start()
+    void Start()
     {
         questWindow.SetActive(true);
         titleText.text = quest.title;

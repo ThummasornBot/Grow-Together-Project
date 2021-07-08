@@ -18,8 +18,7 @@ public class DayDay : MonoBehaviour
     public bool goSleep = false;
 
     bool Checkbed = false;
-
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -120,7 +119,6 @@ public class DayDay : MonoBehaviour
         goSleep = true;
         scenesSleep.SetActive(true);
         endScenesSleep.SetActive(false);
-        
     }
     public void NextScene()
     {
