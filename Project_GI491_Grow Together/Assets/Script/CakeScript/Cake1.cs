@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Cake1 : MonoBehaviour
 {
+    //public int maxHappyValue;
     public int HappyValue;
     public int CakePrice;
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Player.HappyValue < Player.maxHappyValue)
         {
-            if (Player.money >= CakePrice)
+            if (Input.GetMouseButtonDown(0))
             {
-                Player.HappyValue += HappyValue;
-                Player.money -= CakePrice;
-                Debug.Log(HappyValue);
+                if (Player.money >= CakePrice)
+                {
+                    Player.HappyValue += HappyValue;
+                    Player.money -= CakePrice;
+                    Debug.Log(HappyValue);
+                }
             }
         }
     }

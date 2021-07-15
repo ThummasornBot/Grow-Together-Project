@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerController2D : MonoBehaviour
 {
-    float speed = 2.0f;
+    float speed = 5.0f;
     Rigidbody2D rb;
     Animator anim;
     Vector2 direction;
