@@ -7,6 +7,8 @@ public class MagicShopEnter : MonoBehaviour
 {
     public GameObject _MagicShop;
     public GameObject _HappyTownMap;
+    public GameObject _CameraFollowPlayer;
+    public GameObject _CameraMain;
     public GameObject _ExitMagicShop;
     public GameObject _Spin;
 
@@ -24,6 +26,8 @@ public class MagicShopEnter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && CheckTrigger == true)
         {
             Debug.Log("Push");
+            _CameraFollowPlayer.SetActive(false);
+            _CameraMain.SetActive(true);
             _HappyTownMap.SetActive(false);
             _MagicShop.SetActive(true);
             _ExitMagicShop.SetActive(true);
@@ -49,6 +53,8 @@ public class MagicShopEnter : MonoBehaviour
 
     public void ExitMagicShop()
     {
+        _CameraFollowPlayer.SetActive(true);
+        _CameraMain.SetActive(false);
         _HappyTownMap.SetActive(true);
         _MagicShop.SetActive(false);
         _ExitMagicShop.SetActive(false);

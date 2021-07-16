@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     public bool Checkquest1 = false;//เช็คให้ปุ่มทำเควสทำงาน
     public bool haveQuest;
+    public bool lateSleep;
+    public bool lateLateSleep;
     public int maxQuest = 3;
     public int currentQuest;
 
@@ -27,8 +29,8 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
-        TextHappy.text = "HappyValue :" + HappyValue;
-        txtmoney.text = "Money :" + money;
+        TextHappy.text = "" + HappyValue;
+        txtmoney.text = "" + money;
         Quest1Button();
     }
 
@@ -42,7 +44,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Checkquest1 == true) 
         {
             quest.CheckButton = true;
-            Q1();
+            QuestWash();
         }
     }
 
@@ -64,10 +66,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    //quest one
-    public void Q1()
+    //quest 
+    public void QuestWash()
     {
-        if (quest.isActive) 
+        if (quest.isActive)
         {
             quest.goal.DishWash();
             if (quest.goal.IsReached())
@@ -77,17 +79,110 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-    //quest two
-    public void Q2()
+    public void QuestWater()
     {
-        if (quest2.isActive)
+        if (quest.isActive)
         {
-            quest2.goal.Ok();
-            if (quest2.goal.IsReached())
+            quest.goal.Water();
+            if (quest.goal.IsReached())
             {
-                money += quest2.money;
-                quest2.Complete2();
+                money += quest.money;
+                quest.Complete();
+                txtmoney.text = "Money " + money;
+            }
+        }
+    }
+
+    public void QuestBrush()
+    {
+        if (quest.isActive)
+        {
+            quest.goal.Brush();
+            if (quest.goal.IsReached())
+            {
+                money += quest.money;
+                quest.Complete();
+                txtmoney.text = "Money " + money;
+            }
+        }
+    }
+    public void QuestBath()
+    {
+        if (quest.isActive)
+        {
+            quest.goal.Bath();
+            if (quest.goal.IsReached())
+            {
+                money += quest.money;
+                quest.Complete();
+                txtmoney.text = "Money " + money;
+            }
+        }
+    }
+
+    public void QuestBuy()
+    {
+        if (quest.isActive)
+        {
+            quest.goal.Buy();
+            if (quest.goal.IsReached())
+            {
+                money += quest.money;
+                quest.Complete();
+                txtmoney.text = "Money " + money;
+            }
+        }
+    }
+    public void QuestEat()
+    {
+        if (quest.isActive)
+        {
+            quest.goal.Eat
+();
+            if (quest.goal.IsReached())
+            {
+                money += quest.money;
+                quest.Complete();
+                txtmoney.text = "Money " + money;
+            }
+        }
+    }
+    public void QuestRub()
+    {
+        if (quest.isActive)
+        {
+            quest.goal.Rub();
+            if (quest.goal.IsReached())
+            {
+                money += quest.money;
+                quest.Complete();
+                txtmoney.text = "Money " + money;
+            }
+        }
+    }
+
+    public void QuestPick()
+    {
+        if (quest.isActive)
+        {
+            quest.goal.Pick();
+            if (quest.goal.IsReached())
+            {
+                money += quest.money;
+                quest.Complete();
+                txtmoney.text = "Money " + money;
+            }
+        }
+    }
+    public void QuestSweep()
+    {
+        if (quest.isActive)
+        {
+            quest.goal.Sweep();
+            if (quest.goal.IsReached())
+            {
+                money += quest.money;
+                quest.Complete();
                 txtmoney.text = "Money " + money;
             }
         }

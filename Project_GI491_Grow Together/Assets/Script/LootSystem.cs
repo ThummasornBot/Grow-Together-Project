@@ -8,7 +8,7 @@ public class LootSystem : MonoBehaviour
     public GameObject _Roulette01;
     public GameObject _Roulette02;
     public GameObject _SpinItem_Window;
-    public GameObject _Joker;
+    public GameObject _Money5Bath;
     public GameObject _Money10Bath;
     public GameObject _Food;
     public GameObject _Money50Bath;
@@ -20,12 +20,19 @@ public class LootSystem : MonoBehaviour
     float SpinNumber;
 
     public int SpinPrice;
+    public int Clothing;
+    public int maxClothing = 2;
+    public int SpacialClothing;
+    public int maxSpacialClothing = 2;
 
     bool Check;
 
-    bool CheckReceiveItem01 = false;
-    bool CheckReceiveItem02 = false;
-    bool CheckReceiveItem03 = false;
+    bool CheckReceiveItemMoney10 = false;
+    bool CheckReceiveItemFood = false;
+    bool CheckReceiveItemMoney50 = false;
+    bool CheckReceiveItemJoker = false;
+    bool CheckReceiveItemClothing = false;
+    bool CheckReceiveItemSpacialClothing = false;
 
     public void Spawnner()
     {
@@ -36,31 +43,35 @@ public class LootSystem : MonoBehaviour
             Debug.Log(SpinNumber);
             if (SpinNumber >= 1 && SpinNumber <= 70)
             {
-                _Joker.SetActive(true);
+                CheckReceiveItemJoker = true;
+                _Money5Bath.SetActive(true);
                 
             }
             else if (SpinNumber > 70 && SpinNumber <= 83)
             {
-                CheckReceiveItem01 = true;
+                CheckReceiveItemMoney10 = true;
                 _Money10Bath.SetActive(true);
             }
             else if (SpinNumber > 83 && SpinNumber <= 91)
             {
-                CheckReceiveItem02 = true;
+                CheckReceiveItemFood = true;
                 _Food.SetActive(true);
             }
             else if (SpinNumber > 91 && SpinNumber <= 96)
             {
-                CheckReceiveItem03 = true;
+                CheckReceiveItemMoney50 = true;
                 _Money50Bath.SetActive(true);
             }
             else if (SpinNumber > 96 && SpinNumber <= 99)
             {
+                CheckReceiveItemClothing = true;
                 _Clothing.SetActive(true);
                 _ClothingInBook.SetActive(true);
+              
             }
             else if (SpinNumber > 99 && SpinNumber <= 100)
             {
+                CheckReceiveItemSpacialClothing = true;
                 _SpacialClothing.SetActive(true);
                 _SpacialClothingInBook.SetActive(true);
             }
@@ -71,31 +82,34 @@ public class LootSystem : MonoBehaviour
             Debug.Log(SpinNumber);
             if (SpinNumber >= 1 && SpinNumber <= 65)
             {
-                _Joker.SetActive(true);
+                CheckReceiveItemJoker = true;
+                _Money5Bath.SetActive(true);
 
             }
             else if (SpinNumber > 65 && SpinNumber <= 79)
             {
-                CheckReceiveItem01 = true;
+                CheckReceiveItemMoney10 = true;
                 _Money10Bath.SetActive(true);
             }
             else if (SpinNumber > 79 && SpinNumber <= 88)
             {
-                CheckReceiveItem02 = true;
+                CheckReceiveItemFood = true;
                 _Food.SetActive(true);
             }
             else if (SpinNumber > 88 && SpinNumber <= 94)
             {
-                CheckReceiveItem03 = true;
+                CheckReceiveItemMoney50 = true;
                 _Money50Bath.SetActive(true);
             }
             else if (SpinNumber > 94 && SpinNumber <= 98)
             {
+                CheckReceiveItemClothing = true;
                 _Clothing.SetActive(true);
                 _ClothingInBook.SetActive(true);
             }
             else if (SpinNumber > 98 && SpinNumber <= 100)
             {
+                CheckReceiveItemSpacialClothing = true;
                 _SpacialClothing.SetActive(true);
                 _SpacialClothingInBook.SetActive(true);
             }
@@ -106,31 +120,34 @@ public class LootSystem : MonoBehaviour
             Debug.Log(SpinNumber);
             if (SpinNumber >= 1 && SpinNumber <= 60)
             {
-                _Joker.SetActive(true);
+                CheckReceiveItemJoker = true;
+                _Money5Bath.SetActive(true);
 
             }
             else if (SpinNumber > 60 && SpinNumber <= 75)
             {
-                CheckReceiveItem01 = true;
+                CheckReceiveItemMoney10 = true;
                 _Money10Bath.SetActive(true);
             }
             else if (SpinNumber > 75 && SpinNumber <= 85)
             {
-                CheckReceiveItem02 = true;
+                CheckReceiveItemFood = true;
                 _Food.SetActive(true);
             }
             else if (SpinNumber > 85 && SpinNumber <= 92)
             {
-                CheckReceiveItem03 = true;
+                CheckReceiveItemMoney50 = true;
                 _Money50Bath.SetActive(true);
             }
             else if (SpinNumber > 92 && SpinNumber <= 98)
             {
+                CheckReceiveItemClothing = true;
                 _Clothing.SetActive(true);
                 _ClothingInBook.SetActive(true);
             }
             else if (SpinNumber > 98 && SpinNumber <= 100)
             {
+                CheckReceiveItemSpacialClothing = true;
                 _SpacialClothing.SetActive(true);
                 _SpacialClothingInBook.SetActive(true);
             }
@@ -141,31 +158,34 @@ public class LootSystem : MonoBehaviour
             Debug.Log(SpinNumber);
             if (SpinNumber >= 1 && SpinNumber <= 55)
             {
-                _Joker.SetActive(true);
+                CheckReceiveItemJoker = true;
+                _Money5Bath.SetActive(true);
 
             }
             else if (SpinNumber > 55 && SpinNumber <= 71)
             {
-                CheckReceiveItem01 = true;
+                CheckReceiveItemMoney10 = true;
                 _Money10Bath.SetActive(true);
             }
             else if (SpinNumber > 71 && SpinNumber <= 82)
             {
-                CheckReceiveItem02 = true;
+                CheckReceiveItemFood = true;
                 _Food.SetActive(true);
             }
             else if (SpinNumber > 82 && SpinNumber <= 90)
             {
-                CheckReceiveItem03 = true;
+                CheckReceiveItemMoney50 = true;
                 _Money50Bath.SetActive(true);
             }
             else if (SpinNumber > 90 && SpinNumber <= 97)
             {
+                CheckReceiveItemClothing = true;
                 _Clothing.SetActive(true);
                 _ClothingInBook.SetActive(true);
             }
             else if (SpinNumber > 97 && SpinNumber <= 100)
             {
+                CheckReceiveItemSpacialClothing = true;
                 _SpacialClothing.SetActive(true);
                 _SpacialClothingInBook.SetActive(true);
             }
@@ -176,31 +196,34 @@ public class LootSystem : MonoBehaviour
             Debug.Log(SpinNumber);
             if (SpinNumber >= 1 && SpinNumber <= 50)
             {
-                _Joker.SetActive(true);
+                CheckReceiveItemJoker = true;
+                _Money5Bath.SetActive(true);
 
             }
             else if (SpinNumber > 50 && SpinNumber <= 67)
             {
-                CheckReceiveItem01 = true;
+                CheckReceiveItemMoney10 = true;
                 _Money10Bath.SetActive(true);
             }
             else if (SpinNumber > 67 && SpinNumber <= 80)
             {
-                CheckReceiveItem02 = true;
+                CheckReceiveItemFood = true;
                 _Food.SetActive(true);
             }
             else if (SpinNumber > 80 && SpinNumber <= 90)
             {
-                CheckReceiveItem03 = true;
+                CheckReceiveItemMoney50 = true;
                 _Money50Bath.SetActive(true);
             }
             else if (SpinNumber > 90 && SpinNumber <= 97)
             {
+                CheckReceiveItemClothing = true;
                 _Clothing.SetActive(true);
                 _ClothingInBook.SetActive(true);
             }
             else if (SpinNumber > 97 && SpinNumber <= 100)
             {
+                CheckReceiveItemSpacialClothing = true;
                 _SpacialClothing.SetActive(true);
                 _SpacialClothingInBook.SetActive(true);
             }
@@ -211,31 +234,34 @@ public class LootSystem : MonoBehaviour
             Debug.Log(SpinNumber);
             if (SpinNumber >= 1 && SpinNumber <= 45)
             {
-                _Joker.SetActive(true);
+                CheckReceiveItemJoker = true;
+                _Money5Bath.SetActive(true);
 
             }
             else if (SpinNumber > 45 && SpinNumber <= 63)
             {
-                CheckReceiveItem01 = true;
+                CheckReceiveItemMoney10 = true;
                 _Money10Bath.SetActive(true);
             }
             else if (SpinNumber > 63 && SpinNumber <= 77)
             {
-                CheckReceiveItem02 = true;
+                CheckReceiveItemFood = true;
                 _Food.SetActive(true);
             }
             else if (SpinNumber > 77 && SpinNumber <= 89)
             {
-                CheckReceiveItem03 = true;
+                CheckReceiveItemMoney50 = true;
                 _Money50Bath.SetActive(true);
             }
             else if (SpinNumber > 89 && SpinNumber <= 96)
             {
+                CheckReceiveItemClothing = true;
                 _Clothing.SetActive(true);
                 _ClothingInBook.SetActive(true);
             }
             else if (SpinNumber > 96 && SpinNumber <= 100)
             {
+                CheckReceiveItemSpacialClothing = true;
                 _SpacialClothing.SetActive(true);
                 _SpacialClothingInBook.SetActive(true);
             }
@@ -246,31 +272,34 @@ public class LootSystem : MonoBehaviour
             Debug.Log(SpinNumber);
             if (SpinNumber >= 1 && SpinNumber <= 40)
             {
-                _Joker.SetActive(true);
+                CheckReceiveItemJoker = true;
+                _Money5Bath.SetActive(true);
 
             }
             else if (SpinNumber > 40 && SpinNumber <= 59)
             {
-                CheckReceiveItem01 = true;
+                CheckReceiveItemMoney10 = true;
                 _Money10Bath.SetActive(true);
             }
             else if (SpinNumber > 59 && SpinNumber <= 75)
             {
-                CheckReceiveItem02 = true;
+                CheckReceiveItemFood = true;
                 _Food.SetActive(true);
             }
             else if (SpinNumber > 75 && SpinNumber <= 88)
             {
-                CheckReceiveItem03 = true;
+                CheckReceiveItemMoney50 = true;
                 _Money50Bath.SetActive(true);
             }
             else if (SpinNumber > 88 && SpinNumber <= 95)
             {
+                CheckReceiveItemClothing = true;
                 _Clothing.SetActive(true);
                 _ClothingInBook.SetActive(true);
             }
             else if (SpinNumber > 95 && SpinNumber <= 100)
             {
+                CheckReceiveItemSpacialClothing = true;
                 _SpacialClothing.SetActive(true);
                 _SpacialClothingInBook.SetActive(true);
             }
@@ -293,29 +322,61 @@ public class LootSystem : MonoBehaviour
         _Roulette01.SetActive(true);
         _Roulette02.SetActive(false);
         _SpinItem_Window.SetActive(false);
-        _Joker.SetActive(false);
         _Clothing.SetActive(false);
         _SpacialClothing.SetActive(false);
-        if (CheckReceiveItem01 == true)
+
+        if (CheckReceiveItemJoker == true)
+        {
+            _Money5Bath.SetActive(false);
+            Player.money += 5;
+            CheckReceiveItemJoker = false;
+        }
+        else if (CheckReceiveItemMoney10 == true)
         {
             _Money10Bath.SetActive(false);
             Player.money += 10;
-            CheckReceiveItem01 = false;
+            CheckReceiveItemMoney10 = false;
         }
-        else if (CheckReceiveItem02 == true)
+        else if (CheckReceiveItemFood == true)
         {
-            CheckReceiveItem02 = false;
+            CheckReceiveItemFood = false;
             _Food.SetActive(false);
             if (Player.HappyValue < Player.maxHappyValue)
             {
                 Player.HappyValue += 1;
             }
         }
-        else if (CheckReceiveItem03 == true)
+        else if (CheckReceiveItemMoney50 == true)
         {
             _Money50Bath.SetActive(false);
             Player.money += 50;
-            CheckReceiveItem03 = false;
+            CheckReceiveItemMoney50 = false;
+        }
+        else if (CheckReceiveItemClothing == true)
+        {
+            if (Clothing < maxClothing)
+            {
+                Clothing += 1;
+            }
+            
+            if (Clothing == 2)
+            {
+                Player.money += 50;
+            }
+            CheckReceiveItemClothing = false;
+        }
+        else if(CheckReceiveItemSpacialClothing == true)
+        {
+            if (SpacialClothing < maxSpacialClothing)
+            {
+                SpacialClothing += 1;
+            }
+
+            if (SpacialClothing == 2)
+            {
+                Player.money += 50;
+            }
+            CheckReceiveItemSpacialClothing = false;
         }
     }
 

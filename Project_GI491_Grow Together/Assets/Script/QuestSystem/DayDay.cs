@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class DayDay : MonoBehaviour
 {
     public int day = 0;
+    int maxHappy;
+
     public Text dayTxt;
     public Player player;
     public GameObject scenesSleep;
@@ -15,9 +17,15 @@ public class DayDay : MonoBehaviour
     public int timerMin;
     public int timerSec;
     public bool takingAway = true;
-    public bool goSleep = false;
+    public static bool sleep = false;
 
     bool Checkbed = false;
+
+    public GameObject[] LootQuest;
+
+    int randomNumber;
+
+    public static bool isRan = false;
     
 
     // Start is called before the first frame update
@@ -31,6 +39,16 @@ public class DayDay : MonoBehaviour
         timerDisplay.GetComponent<Text>().text = "0" + timerMin + ":" + timerSec;
 
     }
+
+    void Update()
+    {
+        if (takingAway == false && timerSec >= 0 && sleep == false)
+        {
+            StartCoroutine(TimerTake());
+        }
+        UseGoSleep();
+    }
+
     void TimerSet()
     {
         takingAway = false;
@@ -52,7 +70,12 @@ public class DayDay : MonoBehaviour
         else if (timerMin == 0 && timerSec == 0)
         {
             timerDisplay.GetComponent<Text>().text = "0" + timerMin + ":0" + timerSec;
-            GoSleep();
+            if (player.lateSleep == true)
+            {
+                player.lateLateSleep = true;
+            }
+            player.lateSleep = true;
+            lateSleep();
         }
 
         yield return new WaitForSeconds(1);
@@ -80,16 +103,6 @@ public class DayDay : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (takingAway == false && timerSec >= 0 && goSleep == false)
-        {
-            StartCoroutine(TimerTake());
-        }
-        UseGoSleep();
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -114,9 +127,17 @@ public class DayDay : MonoBehaviour
         }
     }
 
+    public void lateSleep()
+    {
+        sleep = true;
+        scenesSleep.SetActive(true);
+        endScenesSleep.SetActive(false);
+        Player.HappyValue = 1;
+    }
+
     public void GoSleep()
     {
-        goSleep = true;
+        sleep = true;
         scenesSleep.SetActive(true);
         endScenesSleep.SetActive(false);
     }
@@ -130,6 +151,69 @@ public class DayDay : MonoBehaviour
         endScenesSleep.SetActive(false);
         NextDay();
         TimerSet();
-        goSleep = false;
+        sleep = false;
+    }
+
+    public void RandomQuest()
+    {
+        LootQuest[0].SetActive(false);
+        LootQuest[1].SetActive(false);
+        LootQuest[2].SetActive(false);
+        LootQuest[3].SetActive(false);
+        LootQuest[4].SetActive(false);
+        LootQuest[5].SetActive(false);
+        LootQuest[6].SetActive(false);
+        LootQuest[7].SetActive(false);
+        LootQuest[8].SetActive(false);
+
+        if (isRan == false)
+        {
+            randomNumber = Random.Range(1, 10);
+
+            Debug.Log(randomNumber);
+            switch (randomNumber)
+            {
+                case 1:
+                    LootQuest[0].SetActive(true);
+                    break;
+
+                case 2:
+                    LootQuest[1].SetActive(true);
+                    break;
+
+                case 3:
+                    LootQuest[2].SetActive(true);
+                    break;
+
+                case 4:
+                    LootQuest[3].SetActive(true);
+                    break;
+
+                case 5:
+                    LootQuest[4].SetActive(true);
+                    break;
+
+                case 6:
+                    LootQuest[5].SetActive(true);
+                    break;
+
+                case 7:
+                    LootQuest[6].SetActive(true);
+                    break;
+
+                case 8:
+                    LootQuest[7].SetActive(true);
+                    break;
+
+                case 9:
+                    LootQuest[8].SetActive(true);
+                    break;
+
+            }
+            isRan = true;
+        }
+
     }
 }
+
+

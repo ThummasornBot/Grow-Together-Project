@@ -9,6 +9,7 @@ public class Quest
     public bool CheckButton = false;
 
     public bool isActive;
+    public bool isFinish = false;
 
     public string title;
     public string descrit;
@@ -21,13 +22,7 @@ public class Quest
     public void Complete()
     {
         isActive = false;
-        
-        Debug.Log(title + " complete");
-    }
-    public void Complete2()
-    {
-        isActive = false;
-        
+        isFinish = true;
         Debug.Log(title + " complete");
     }
 }

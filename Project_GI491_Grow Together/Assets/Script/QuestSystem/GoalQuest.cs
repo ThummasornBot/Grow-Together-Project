@@ -21,14 +21,51 @@ public class GoalQuest
         if (goalType == GoalType.wash)
             currentAmount++;
     }
-    public void Ok()
+
+    public void Water()
+    {
+        if (goalType == GoalType.water)
+            currentAmount++;
+    }
+    public void Brush()
+    {
+        if (goalType == GoalType.brush
+)
+            currentAmount++;
+    }
+    public void Bath()
+    {
+        if (goalType == GoalType.bath)
+            currentAmount++;
+    }
+    public void Buy()
     {
         if (goalType == GoalType.buy)
+            currentAmount++;
+    }
+    public void Eat()
+    {
+        if (goalType == GoalType.eat)
+            currentAmount++;
+    }
+    public void Rub()
+    {
+        if (goalType == GoalType.rub)
+            currentAmount++;
+    }
+    public void Pick()
+    {
+        if (goalType == GoalType.pick)
+            currentAmount++;
+    }
+    public void Sweep()
+    {
+        if (goalType == GoalType.sweep)
             currentAmount++;
     }
 }
 
 public enum GoalType
 {
-    wash,buy
+    wash,buy, bath, brush, eat, sweep, rub, pick, water
 }
